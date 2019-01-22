@@ -11,34 +11,36 @@
         
     </head>
     <body>
-        <header id="">
+        <header id="header">
             <div class="container">
                 <h1 id="h1">How well do you know LOTR???</h1>
             </div>
         </header>
 
-        <div class="jumbotron">
+        <div class = "wrapper">
+
+        <div class = "jumbotron">
                 <h1 class="display-4">Lord of the Rings Trivia!</h1>
                 
-                <a class="btn btn-primary btn-lg"  href="startGame" role="button">Start Quiz!</a>
-              </div>
+                <a class="btn btn-primary btn-lg" id="startGame" role="button">Start Quiz!</a>
+                <div class = "timer" id = "timeLeft"></div>
+        </div>
+            
+            <div class = "form" id = "questions-container"></div>
+        </div>
 
-        
+        <div class="message" id="messageDiv"></div>
+        <div class="results"></div>
 
-
+        <div class = "done-button"><a class="btn btn-primary btn-lg" role="button">All Done!</a></div>
     
-
-
-
-
-
-
-
-
-        <script src="../TriviaGame/assets/javascript/main.js"></script>
+    
         <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <script src="../TriviaGame/assets/javascript/main.js"></script>
+        
     </body>
 </html>

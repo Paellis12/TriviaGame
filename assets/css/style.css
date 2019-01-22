@@ -29,3 +29,12 @@ body {
     text-align: center;
     
 }
+
+.done-button {
+    text-align: center;
+}
+
+#questions-container {
+    background-color: aliceblue;
+    text-align: center;
+}
