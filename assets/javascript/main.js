@@ -8,7 +8,7 @@ $(document).ready(function() {
         questions: [
 
            { 
-                question: "In the first movie, how old was Bilbo turning at his big birthday party",
+                question: "In the first movie, how old was Bilbo turning at his big birthday party?",
                 possibleAnswer: ["100", "99", "111", "21" ],
                 id: "q1",
                 answer: 2
@@ -58,14 +58,14 @@ $(document).ready(function() {
     });
     //Will start the timer and inform the user how much time they have//
     var number = 60;
-    $("#timeLeft").on("click", run);
+    
     //
     function decrement(){
         number--;
         $("#timeLeft").html("<h2>" + number + " seconds"+"</h2>");
         if (number === 0){
              stop();
-             $("#message").html("Times Up!!!");
+             $(".message").html("Times Up!!!");
              checkAnswers();
         }
     }
@@ -78,6 +78,7 @@ $(document).ready(function() {
     function stop(){
         clearInterval(counter);
     }
+    $("#timeLeft").on("click", run);
     run();
 
     function formTemplate(data) {
@@ -88,7 +89,8 @@ $(document).ready(function() {
             for (var i = 0; i < possibleAnswer.length; i++) {
                 var possibleAnswer = possibleAnswer[i];
                 console.log(possibleAnswer);
-                questionString = questionString + "<input type='radio' name='"+data.id+"' value="+ i +">"+possibleAnswer;
+                questionString = questionString + "<input type= 'radio' name = '" +data.id+ "' value = "+ i +">"+ possibleAnswer;
+                                                  
         
             }
             return questionString + "</form>";
@@ -97,7 +99,7 @@ $(document).ready(function() {
 
     function questionsFunc(){
         var questionHTML = '';
-        for (var i = 0; i<game.questions.length; i++) {
+        for (var i = 0; i < game.questions.length; i++) {
                 questionHTML = questionHTML + formTemplate(game.questions[i]);
             }
             $("#questions-container").append(questionHTML);
@@ -112,6 +114,7 @@ $(document).ready(function() {
         return isChecked;
     }
 
+    
     function resultsTemplate(question){
         var htmlBlock = "<div>"
         htmlBlock = htmlBlock + question + ': ' + isChecked;
@@ -121,9 +124,6 @@ $(document).ready(function() {
 
     function checkAnswers (){
 
-        // variables needed to hold results
-            
-            var guessedAnswers = [];
             var correct = 0;
             var incorrect = 0;
             var unAnswered =0
@@ -160,16 +160,11 @@ $(document).ready(function() {
         
         }
 
-        
-
-
-        
-        
-            $('.done-button').on('click', function() {
+         $('.done-button').on('click', function() {
             checkAnswers();
             stop();
             $("#messageDiv").html("Game Over!");
-            })
+            });
     
 
 });

@@ -11,8 +11,7 @@ body {
     text-align: center;
     background-color: rgb(175, 163, 154);
     border: black solid;
-    margin-left: 200px;
-    margin-right: 200px;
+    
     font-family: Arial, Helvetica, sans-serif;
     
 }
@@ -20,7 +19,7 @@ body {
 .display-4 {
     background-color: rgb(175, 163, 154);
     border: black solid;
-    margin: 100px 200px 100px 200px;
+    
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
@@ -37,4 +36,7 @@ body {
 #questions-container {
     background-color: aliceblue;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 100px 300px 100px 300px;
 }
