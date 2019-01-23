@@ -51,15 +51,11 @@ $(document).ready(function() {
            }
         ]
     }
-    //grab id from html and give start button functionality//
-    $("#startGame").on("click", function(){
-        $(this).hide();
-        $(".wrapper").show();
-    });
-    //Will start the timer and inform the user how much time they have//
+   
+    //Variable to hold number of seconds upon starting the quiz//
     var number = 60;
     
-    //
+    //Displays the amount of time left and decrements the time minus 1
     function decrement(){
         number--;
         $("#timeLeft").html("<h2>" + number + " seconds"+"</h2>");
@@ -78,8 +74,14 @@ $(document).ready(function() {
     function stop(){
         clearInterval(counter);
     }
-    $("#timeLeft").on("click", run);
+    
     run();
+     //grab id from html and give start button functionality//
+     $("#startGame").on("click", function(){
+        $(this).hide();
+        $(".wrapper").show();
+        $("#timeLeft").on("click", run);
+    });
 
     function formTemplate(data) {
         
