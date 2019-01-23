@@ -87,18 +87,18 @@ $(document).ready(function() {
         var possibleAnswer = data.possibleAnswer;
          
             for (var i = 0; i < possibleAnswer.length; i++) {
-                var possibleAnswer = possibleAnswer[i];
+                var possible = possibleAnswer[i];
                 console.log(possibleAnswer);
-                questionString = questionString + "<input type= 'radio' name = '" +data.id+ "' value = "+ i +">"+ possibleAnswer;
+                questionString = questionString + "<input type= 'radio' name = '" +data.id+ "' value = "+ i +">"+ possible  ;
+                
                                                   
-        
             }
-            return questionString + "</form>";
+            return questionString + "</form>";  
     }
             window.formTemplate = formTemplate;
 
     function questionsFunc(){
-        var questionHTML = '';
+        var questionHTML = " ";
         for (var i = 0; i < game.questions.length; i++) {
                 questionHTML = questionHTML + formTemplate(game.questions[i]);
             }
@@ -160,7 +160,7 @@ $(document).ready(function() {
         
         }
 
-         $('.done-button').on('click', function() {
+         $(".done-button").on('click', function() {
             checkAnswers();
             stop();
             $("#messageDiv").html("Game Over!");
